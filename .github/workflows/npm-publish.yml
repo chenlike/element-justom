@@ -26,6 +26,7 @@ jobs:
         with:
           node-version: '10.15.0'
           registry-url: https://registry.npmjs.org/
+      - run: npm set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: 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
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
